@@ -1,0 +1,1 @@
+worker        ALL=(ALL)       NOPASSWD: ALL

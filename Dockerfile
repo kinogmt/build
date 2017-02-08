@@ -8,6 +8,8 @@ ADD sudoers /etc/sudoers.d/
 
 RUN ln -s /usr/local/apache-ant-1.9.9 /usr/local/ant
 
+ADD ant-findbugs.jar /usr/local/ant/lib
+
 ##########################################################################
 # worker
 RUN (useradd worker; echo "worker:password" | chpasswd)

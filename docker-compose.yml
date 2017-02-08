@@ -9,6 +9,8 @@ services:
       - 8.8.8.8
     dns_search:
       - localdomain
+    volumes:
+      - ~/work:/home/worker/work
     networks:
       net1:
         ipv4_address: 10.1.1.2

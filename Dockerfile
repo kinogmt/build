@@ -13,7 +13,8 @@ ADD ant-findbugs.jar /usr/local/ant/lib
 
 ##########################################################################
 # worker
-RUN (useradd -u 1000 worker; echo "worker:password" | chpasswd)
+RUN (useradd -u 1000 worker; echo "worker:password" | chpasswd; \
+     mkdir -p /var/log/cloudian; chown worker:worker /var/log/cloudian)
 
 ADD bashrc /home/worker/.bashrc
 

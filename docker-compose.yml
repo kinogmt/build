@@ -1,0 +1,21 @@
+version: "2"
+services:
+  bld:
+    image: quay.io/cloudian/centos-ssh:ant
+    hostname: bld1
+    privileged: true
+    dns:
+      - 127.0.0.1
+      - 8.8.8.8
+    dns_search:
+      - localdomain
+    networks:
+      net1:
+        ipv4_address: 172.28.0.200
+networks:
+  net1:
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16
+          ip_range: 172.28.0.0/16
+          gateway: 172.28.0.1

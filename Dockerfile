@@ -7,7 +7,7 @@ ADD findbugs-3.0.1.tar.gz /usr/local/
 ADD sudoers /etc/sudoers.d/
 
 RUN (ln -s /usr/local/apache-ant-1.9.9 /usr/local/ant; \
-     ln -s /usr/local/findbugs-3.0.1/ /usr/share/; \ 
+     ln -s /usr/local/findbugs-3.0.1/ /usr/share/; \
      ln -s /usr/local/findbugs-3.0.1 /usr/share/findbugs)
 
 ADD ant-findbugs.jar /usr/local/ant/lib

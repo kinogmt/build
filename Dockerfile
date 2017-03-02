@@ -9,6 +9,7 @@ ADD sudoers /etc/sudoers.d/
 RUN (ln -s /usr/local/apache-ant-1.9.9 /usr/local/ant; \
      ln -s /usr/local/findbugs-3.0.1/ /usr/share/; \
      ln -s /usr/local/findbugs-3.0.1 /usr/share/findbugs; \
+     ln -s /usr/local/findbugs/bin/findbugs /usr/local/bin/; \
      sed -i '/grant *{/a permission javax.management.MBeanTrustPermission "register";' /usr/java/default/jre/lib/security/java.policy)
 
 ADD ant-findbugs.jar /usr/local/ant/lib

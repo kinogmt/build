@@ -20,7 +20,7 @@ docker-compose up -d bld
 ## ssh to container
 
 ```
-ssh -A worker@10.1.1.2
+ssh -p3022 -A worker@localhost
 ```
 
 ## build with ant(on the conatainer)

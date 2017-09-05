@@ -1,4 +1,4 @@
-FROM quay.io/cloudian/centos-ssh:jdk8
+FROM quay.io/cloudian/centos-ssh:7-jdk8
 
 RUN yum install -y git
 
@@ -23,4 +23,4 @@ ADD bashrc /home/worker/.bashrc
 
 
 EXPOSE 22
-CMD service crond start; /usr/sbin/sshd -D
+CMD ["/sbin/init", "service crond start", "/usr/sbin/sshd -D"]

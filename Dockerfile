@@ -23,4 +23,4 @@ ADD bashrc /home/worker/.bashrc
 
 
 EXPOSE 22
-CMD ["/sbin/init", "service crond start", "/usr/sbin/sshd -D"]
+CMD ["/sbin/init"]

@@ -14,6 +14,7 @@ services:
     volumes:
       - ~/work:/home/worker/work
       - ~/.ssh:/home/worker/.ssh
+      - ~/.ivy2:/home/worker/.ivy2
     networks:
       net1:
         ipv4_address: 10.1.1.2

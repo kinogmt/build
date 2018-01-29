@@ -3,7 +3,7 @@ ENV SBVER=3.1.0-RC5
 ENV ANTVER=1.9.9
 ENV FBVER=3.0.1
 
-RUN yum install -y git
+RUN yum install -y git maven python2-pip
 
 ADD apache-ant-1.9.9-bin.tar.gz /usr/local/
 ADD findbugs-3.0.1.tar.gz /usr/local/

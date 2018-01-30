@@ -3,7 +3,9 @@ ENV SBVER=3.1.0-RC5
 ENV ANTVER=1.9.9
 ENV FBVER=3.0.1
 
-RUN yum install -y git maven python2-pip
+RUN yum install -y git maven python2-pip zip
+RUN pip install pip --upgrade
+RUN pip install awscli --upgrade
 
 ADD apache-ant-1.9.9-bin.tar.gz /usr/local/
 ADD findbugs-3.0.1.tar.gz /usr/local/

@@ -1,4 +1,4 @@
-FROM quay.io/cloudian/centos-ssh:jdk8
+FROM quay.io/cloudian/centos-ssh:6.7-jdk8
 
 RUN yum install -y git
 

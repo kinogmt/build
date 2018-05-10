@@ -21,6 +21,8 @@ RUN (ln -s /usr/local/apache-ant-${ANTVER} /usr/local/ant; \
      ln -s /usr/local/spotbugs-${SBVER} /usr/share/spotbugs; \
      ln -s /usr/local/spotbugs-${SBVER} /usr/local/spotbugs; \
      ln -s /usr/local/spotbugs-${SBVER}/bin/spotbugs /usr/local/bin/; \
+
+     # symlink for spotbugs-ant.jar did not work on Docker for mac 18.03.1-ce
      cp /usr/local/spotbugs/lib/spotbugs-ant.jar /usr/java/ant/lib/; \
      sed -i '/grant *{/a permission javax.management.MBeanTrustPermission "register";' /usr/java/default/jre/lib/security/java.policy)
 

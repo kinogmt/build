@@ -47,5 +47,7 @@ spotbugs-ant.jar is not correctly recognized on macos.
 workaround:
 
 After starting the container -
- # rm /usr/java/ant/lib/spotbugs-ant.jar
- # cp /usr/local/spotbugs/lib/spotbugs-ant.jar /usr/java/ant/lib
+```
+rm /usr/java/ant/lib/spotbugs-ant.jar
+cp /usr/local/spotbugs/lib/spotbugs-ant.jar /usr/java/ant/lib
+```

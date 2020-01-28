@@ -2,8 +2,9 @@ FROM quay.io/cloudian/centos-ssh:7-jdk8
 ENV SBVER=3.1.3
 ENV ANTVER=1.9.9
 ENV FBVER=3.0.1
+ENV JAVA_HOME=/usr/lib/jvm/java
 
-RUN yum install -y git maven python2-pip zip
+RUN yum install -y git maven python2-pip zip openjdk
 RUN pip install pip --upgrade
 RUN pip install awscli --upgrade
 
@@ -13,7 +14,7 @@ ADD spotbugs-${SBVER}.tgz /usr/local/
 ADD sudoers /etc/sudoers.d/
 
 RUN (ln -s /usr/local/apache-ant-${ANTVER} /usr/local/ant; \
-     ln -s /usr/local/apache-ant-${ANTVER} /usr/java/ant; \
+     ln -s /usr/local/apache-ant-${ANTVER} ${JAVA_HOME}/ant; \
      ln -s /usr/local/findbugs-${FBVER}/ /usr/share/; \
      ln -s /usr/local/findbugs-${FBVER} /usr/share/findbugs; \
      ln -s /usr/share/findbugs/bin/findbugs /usr/local/bin/; \
@@ -21,8 +22,8 @@ RUN (ln -s /usr/local/apache-ant-${ANTVER} /usr/local/ant; \
      ln -s /usr/local/spotbugs-${SBVER} /usr/share/spotbugs; \
      ln -s /usr/local/spotbugs-${SBVER} /usr/local/spotbugs; \
      ln -s /usr/local/spotbugs-${SBVER}/bin/spotbugs /usr/local/bin/; \
-     ln -s /usr/local/spotbugs/lib/spotbugs-ant.jar /usr/java/ant/lib/; \
-     sed -i '/grant *{/a permission javax.management.MBeanTrustPermission "register";' /usr/java/default/jre/lib/security/java.policy)
+     ln -s /usr/local/spotbugs/lib/spotbugs-ant.jar ${JAVA_HOME}/ant/lib/; \
+     sed -i '/grant *{/a permission javax.management.MBeanTrustPermission "register";' ${JAVA_HOME}/default/jre/lib/security/java.policy)
 
 ADD ant-findbugs.jar /usr/local/ant/lib
 

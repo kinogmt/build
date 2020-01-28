@@ -6,7 +6,7 @@ if [ -f /etc/bashrc ]; then
         fi
 
 # User specific aliases and functions
-export JAVA_HOME=/usr/java/default
+export JAVA_HOME=/usr/lib/jvm/java
 export ANT_HOME=/usr/local/ant
 export PATH=$ANT_HOME/bin:$JAVA_HOME/bin:$PATH
 export LANG=en_US.utf8

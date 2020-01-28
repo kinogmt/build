@@ -23,7 +23,7 @@ RUN (ln -s /usr/local/apache-ant-${ANTVER} /usr/local/ant; \
      ln -s /usr/local/spotbugs-${SBVER} /usr/local/spotbugs; \
      ln -s /usr/local/spotbugs-${SBVER}/bin/spotbugs /usr/local/bin/; \
      ln -s /usr/local/spotbugs/lib/spotbugs-ant.jar ${JAVA_HOME}/ant/lib/; \
-     sed -i '/grant *{/a permission javax.management.MBeanTrustPermission "register";' ${JAVA_HOME}/default/jre/lib/security/java.policy)
+     sed -i '/grant *{/a permission javax.management.MBeanTrustPermission "register";' ${JAVA_HOME}/jre/lib/security/java.policy)
 
 ADD ant-findbugs.jar /usr/local/ant/lib
 

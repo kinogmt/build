@@ -1,4 +1,4 @@
-FROM quay.io/cloudian/centos-ssh:7.6.1810
+FROM quay.io/cloudian/centos-ssh:7.7.1908
 ENV SBVER=3.1.3
 ENV ANTVER=1.9.9
 ENV FBVER=3.0.1

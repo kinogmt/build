@@ -48,6 +48,6 @@ workaround:
 
 After starting the container -
 ```
-rm /usr/java/ant/lib/spotbugs-ant.jar
-cp /usr/local/spotbugs/lib/spotbugs-ant.jar /usr/java/ant/lib
+sudo rm $JAVA_HOME/ant/lib/spotbugs-ant.jar
+sudo ln -s /usr/local/spotbugs/lib/spotbugs-ant.jar $JAVA_HOME/ant/lib/spotbugs-ant.jar
 ```

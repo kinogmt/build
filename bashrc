@@ -10,3 +10,5 @@ export JAVA_HOME=/usr/lib/jvm/java
 export ANT_HOME=/usr/local/ant
 export PATH=$ANT_HOME/bin:$JAVA_HOME/bin:$PATH
 export LANG=en_US.utf8
+
+export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8

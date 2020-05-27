@@ -1,7 +1,7 @@
 version: "2"
 services:
   bld:
-    image: quay.io/cloudian/centos-ssh:7.6.1810-ant
+    image: quay.io/cloudian/centos-ssh:7.7.1908-ant
     hostname: bld1
     privileged: true
     dns:

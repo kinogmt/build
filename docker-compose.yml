@@ -13,6 +13,7 @@ services:
       - "3022:22"
     volumes:
       - ~/work:/home/worker/work
+      - ~/.aws:/home/worker/.aws
       - ~/.ssh:/home/worker/.ssh
       - ~/.ivy2:/home/worker/.ivy2
       - ./resolv.conf:/etc/resolv.conf

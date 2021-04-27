@@ -1,10 +1,10 @@
-FROM quay.io/cloudian/centos-ssh:7.7.1908
+FROM quay.io/cloudian/centos-ssh:7.9.2009
 ENV SBVER=3.1.3
 ENV ANTVER=1.9.9
 ENV FBVER=3.0.1
 ENV JAVA_HOME=/usr/lib/jvm/java
 
-RUN yum install -y git maven python3-pip zip openjdk
+RUN yum install -y git maven python3-pip zip openjdk ncurses-devel gcc-c++
 RUN pip3 install pip --upgrade
 RUN pip3 install awscli --upgrade
 
@@ -33,6 +33,15 @@ RUN (useradd -u 1000 worker; echo "worker:password" | chpasswd; \
      mkdir -p /var/log/cloudian; chown worker:worker /var/log/cloudian)
 
 ADD bashrc /home/worker/.bashrc
+
+########
+# golang
+########
+RUN (GOL=go1.16.3.linux-amd64.tar.gz; \
+     curl -O curl -O https://dl.google.com/go/${GOL}; \
+     rm -rf /usr/local/go && tar -C /usr/local -xzf ${GOL}; \
+     ln -sf /usr/local/go/bin/go /usr/local/bin/go; \
+     rm -f ${GOL})
 
 
 EXPOSE 22

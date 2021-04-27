@@ -4,7 +4,7 @@ ENV ANTVER=1.9.9
 ENV FBVER=3.0.1
 ENV JAVA_HOME=/usr/lib/jvm/java
 
-RUN yum install -y git maven python3-pip zip openjdk ncurses-devel gcc-c++
+RUN yum install -y git maven python3-pip zip openjdk ncurses-devel gcc-c++ rpm-build
 RUN pip3 install pip --upgrade
 RUN pip3 install awscli --upgrade
 

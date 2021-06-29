@@ -12,6 +12,7 @@ ADD apache-ant-1.9.9-bin.tar.gz /usr/local/
 ADD findbugs-3.0.1.tar.gz /usr/local/
 ADD spotbugs-${SBVER}.tgz /usr/local/
 ADD sudoers /etc/sudoers.d/
+ADD apache-maven-3.8.1-bin.tar.gz /opt
 
 RUN (ln -s /usr/local/apache-ant-${ANTVER} /usr/local/ant; \
      ln -s /usr/local/apache-ant-${ANTVER} ${JAVA_HOME}/ant; \
@@ -23,6 +24,8 @@ RUN (ln -s /usr/local/apache-ant-${ANTVER} /usr/local/ant; \
      ln -s /usr/local/spotbugs-${SBVER} /usr/local/spotbugs; \
      ln -s /usr/local/spotbugs-${SBVER}/bin/spotbugs /usr/local/bin/; \
      ln -s /usr/local/spotbugs/lib/spotbugs-ant.jar ${JAVA_HOME}/ant/lib/; \
+     ln -s /opt/apache-maven-3.8.1 /opt/apache-maven; \
+     chmod 755 /usr/local/spotbugs/bin/spotbugs; \
      sed -i '/grant *{/a permission javax.management.MBeanTrustPermission "register";' ${JAVA_HOME}/jre/lib/security/java.policy)
 
 ADD ant-findbugs.jar /usr/local/ant/lib
@@ -45,6 +48,8 @@ RUN (GOL=go1.16.3.linux-amd64.tar.gz; \
      su - worker -c "go get github.com/tebeka/go2xunit"; \
      rm -f ${GOL})
 
+RUN (alternatives --set java java-11-openjdk.x86_64; \
+     alternatives --set javac java-11-openjdk.x86_64)
 
 EXPOSE 22
 CMD ["/sbin/init"]

@@ -1,10 +1,10 @@
 FROM quay.io/cloudian/centos-ssh:7.9.2009
-ENV SBVER=3.1.3
+ENV SBVER=4.2.3
 ENV ANTVER=1.9.9
 ENV FBVER=3.0.1
 ENV JAVA_HOME=/usr/lib/jvm/java
 
-RUN yum install -y git maven python3-pip zip openjdk ncurses-devel gcc-c++ rpm-build
+RUN yum install -y git maven python3-pip zip java-11-openjdk-devel ncurses-devel gcc-c++ rpm-build
 RUN pip3 install pip --upgrade
 RUN pip3 install awscli --upgrade
 

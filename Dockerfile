@@ -1,5 +1,5 @@
 FROM quay.io/cloudian/centos-ssh:7.9.2009
-ENV SBVER=4.2.3
+ENV SBVER=4.4.1
 ENV ANTVER=1.9.9
 ENV FBVER=3.0.1
 ENV JAVA_HOME=/usr/lib/jvm/java

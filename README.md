@@ -51,3 +51,8 @@ After starting the container -
 sudo rm $JAVA_HOME/ant/lib/spotbugs-ant.jar
 sudo ln -s /usr/local/spotbugs/lib/spotbugs-ant.jar $JAVA_HOME/ant/lib/spotbugs-ant.jar
 ```
+ or
+```
+sudo rm /usr/local/apache-ant-<version>/lib/spotbugs-ant.jar
+sudo ln -s /usr/local/spotbugs/lib/spotbugs-ant.jar /usr/local/apache-ant-<version>/lib/spotbugs-ant.jar
+```

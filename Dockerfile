@@ -41,7 +41,7 @@ ADD bashrc /home/worker/.bashrc
 # golang
 ########
 RUN (GOL=go1.16.3.linux-amd64.tar.gz; \
-     curl -O curl -O https://dl.google.com/go/${GOL}; \
+     curl -O https://dl.google.com/go/${GOL}; \
      rm -rf /usr/local/go && tar -C /usr/local -xzf ${GOL}; \
      ln -sf /usr/local/go/bin/go /usr/bin/go; \
      go get github.com/tebeka/go2xunit; \
